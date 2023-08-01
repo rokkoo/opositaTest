@@ -6,10 +6,16 @@
  */
 
 import React from 'react';
+
 import AppNavigationContainer from '@app/navigation';
+import { AppThemeProvider } from '@app/theme/themeContext';
 
 function App(): JSX.Element {
-  return <AppNavigationContainer />;
+  return (
+    <AppThemeProvider>
+      <AppNavigationContainer />
+    </AppThemeProvider>
+  );
 }
 
 export default App;
