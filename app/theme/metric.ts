@@ -8,6 +8,15 @@ export const Spacing = {
   xxxl: 40,
 } as const;
 
+export const AppLayoutSpacing = {
+  paddingHorizontal: Spacing.l,
+  paddingLeft: Spacing.l,
+  paddingRight: Spacing.l,
+  paddingVertical: Spacing.xl,
+  paddingTop: Spacing.xl,
+  paddingBottom: Spacing.xl,
+} as const;
+
 export const FontSize = {
   s: 12,
   m: 16,
