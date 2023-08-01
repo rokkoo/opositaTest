@@ -2,14 +2,9 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { STACK_SCREENS } from './types';
+import { RootStackParamList, STACK_SCREENS } from './types';
 import Home from '@app/features/home';
 import BookDetails from '@app/features/bookDetails';
-
-export type RootStackParamList = {
-  [STACK_SCREENS.Home]: undefined;
-  [STACK_SCREENS.BookDetails]: { itemId: number };
-};
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
