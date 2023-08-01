@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { EdgeInsets, useSafeAreaInsets } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/AntDesign';
 
@@ -10,7 +10,11 @@ import useHeader from './hooks/useHeader';
 
 const HEADER_HEIGHT = 54;
 
-const Header = () => {
+interface HeaderProps {
+  rightChildren?: React.ReactNode;
+}
+
+const Header: React.FC<HeaderProps> = ({ rightChildren }) => {
   const { theme } = useAppTheme();
   const insets = useSafeAreaInsets();
   const { handleBackPress } = useHeader();
@@ -19,12 +23,17 @@ const Header = () => {
 
   return (
     <View style={styles.container}>
-      <Icon
-        name="left"
-        size={24}
-        color={theme.background}
-        onPress={handleBackPress}
-      />
+      <View style={styles.contentContainer}>
+        <View style={styles.leftContainer}>
+          <Icon
+            name="left"
+            size={24}
+            color={theme.background}
+            onPress={handleBackPress}
+          />
+        </View>
+        <View>{rightChildren}</View>
+      </View>
     </View>
   );
 };
@@ -35,12 +44,19 @@ const styling = (theme: AppTheme, insets: EdgeInsets) => {
       position: 'absolute',
       top: insets.top + Spacing.s,
       left: 0,
-      width: Dimensions.get('screen').width,
+      width: '100%',
       height: HEADER_HEIGHT,
       zIndex: 1,
       paddingHorizontal: AppLayoutSpacing.paddingHorizontal,
-      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
     },
+    contentContainer: {
+      flexDirection: 'row',
+      width: '100%',
+      justifyContent: 'space-between',
+    },
+    leftContainer: {},
   });
 };
 
