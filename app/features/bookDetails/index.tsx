@@ -1,12 +1,23 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import Animated from 'react-native-reanimated';
+
+import Header from '../commons/header';
+import BookDetailHeader from './components/BookDetailHeader';
 
 const BookDetails = () => {
   return (
-    <View>
-      <Text>Book details</Text>
-    </View>
+    <Animated.View style={styles.container}>
+      <Header />
+      <BookDetailHeader />
+    </Animated.View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default BookDetails;
