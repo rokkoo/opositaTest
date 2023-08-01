@@ -9,12 +9,15 @@ import React from 'react';
 
 import AppNavigationContainer from '@app/navigation';
 import { AppThemeProvider } from '@app/theme/themeContext';
+import { QueryClientWrapper } from '@app/queryClientWrapper';
 
 function App(): JSX.Element {
   return (
-    <AppThemeProvider>
-      <AppNavigationContainer />
-    </AppThemeProvider>
+    <QueryClientWrapper>
+      <AppThemeProvider>
+        <AppNavigationContainer />
+      </AppThemeProvider>
+    </QueryClientWrapper>
   );
 }
 
