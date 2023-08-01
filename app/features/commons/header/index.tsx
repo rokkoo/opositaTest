@@ -4,9 +4,11 @@ import { EdgeInsets, useSafeAreaInsets } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 import { useAppTheme } from '@app/theme/hooks/useTheme';
-import { Spacing } from '@app/theme/metric';
+import { AppLayoutSpacing, Spacing } from '@app/theme/metric';
 import { AppTheme } from '@app/theme/types';
 import useHeader from './hooks/useHeader';
+
+const HEADER_HEIGHT = 54;
 
 const Header = () => {
   const { theme } = useAppTheme();
@@ -34,9 +36,10 @@ const styling = (theme: AppTheme, insets: EdgeInsets) => {
       top: insets.top + Spacing.s,
       left: 0,
       width: Dimensions.get('screen').width,
-      height: 40,
+      height: HEADER_HEIGHT,
       zIndex: 1,
-      paddingHorizontal: Spacing.l,
+      paddingHorizontal: AppLayoutSpacing.paddingHorizontal,
+      justifyContent: 'center',
     },
   });
 };

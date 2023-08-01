@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, View, useWindowDimensions } from 'react-native';
 import useBookDetail from '../../hooks/useBookDetail';
 import AppText from '@app/features/commons/core/text';
-import { FontSize, Spacing } from '@app/theme/metric';
+import { AppLayoutSpacing, FontSize } from '@app/theme/metric';
 import { useAppTheme } from '@app/theme/hooks/useTheme';
 
 const BookDetailHeader = () => {
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   bottom: {
     position: 'absolute',
-    left: Spacing.xl,
+    left: AppLayoutSpacing.paddingLeft,
     bottom: 20,
     zIndex: 1,
   },
