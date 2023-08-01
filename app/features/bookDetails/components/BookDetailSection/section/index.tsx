@@ -18,7 +18,7 @@ const Section: React.FC<SectionPros> = ({ categoryName, value }) => {
       <AppText fontSize={FontSize.xl} color={theme.text.secondary} bold>
         {categoryName}
       </AppText>
-      <Spacer size={Spacing.xl} />
+      <Spacer size={Spacing.l} />
       <AppText bold style={styles.textValue}>
         {value}
       </AppText>

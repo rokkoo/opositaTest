@@ -22,11 +22,11 @@ const BookDetailSection = () => {
   return (
     <Animated.View style={styles.container}>
       <Section categoryName="Autor" value={authorText} />
-      <Spacer size={Spacing.xxxl} />
+      <Spacer size={Spacing.xxl} />
       <Section categoryName="Editorial" value={book.publisher} />
-      <Spacer size={Spacing.xxxl} />
+      <Spacer size={Spacing.xxl} />
       <Section categoryName="Año de publicacón" value={book.released} />
-      <Spacer size={Spacing.xxxl} />
+      <Spacer size={Spacing.xxl} />
       <Section categoryName="Numero de páginas" value={book.numberOfPages} />
     </Animated.View>
   );
