@@ -12,9 +12,9 @@ import { Book } from '@app/services/dtos/booksDTO';
 import { FontSize, Spacing } from '@app/theme/metric';
 import AppText from '@app/features/commons/core/text';
 import { useAppTheme } from '@app/theme/hooks/useTheme';
-import useBookAction from '@app/features/home/components/booksListSection/components/booksList/components/hooks/useBookAction';
+import useBookAction from '@app/features/home/components/bookItem/hooks/useBookAction';
 
-interface BookItemProps extends Book {
+export interface BookItemProps extends Book {
   index: number;
 }
 

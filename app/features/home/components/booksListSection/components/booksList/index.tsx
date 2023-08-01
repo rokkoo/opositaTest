@@ -2,7 +2,7 @@ import React from 'react';
 
 import AppList from '@app/features/commons/core/appList';
 import useBooks from '@app/features/home/components/booksListSection/hooks/useBooks';
-import BookItem from '@app/features/home/components/booksListSection/components/booksList/components/BookItem';
+import BookItem from '@app/features/home/components/bookItem';
 
 const BooksList = () => {
   const { data } = useBooks();
