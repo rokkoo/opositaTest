@@ -6,4 +6,11 @@ export const Spacing = {
   xl: 24,
   xxl: 32,
   xxxl: 40,
-};
+} as const;
+
+export const FontSize = {
+  s: 12,
+  m: 16,
+  l: 20,
+  xl: 24,
+} as const;

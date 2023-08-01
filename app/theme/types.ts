@@ -6,8 +6,14 @@ export const THEME_SCHEMA = {
 export type THEME_SCHEMA_VALUES =
   (typeof THEME_SCHEMA)[keyof typeof THEME_SCHEMA];
 
+export type AppTextTheme = {
+  primary: string;
+  secondary: string;
+};
+
 export type AppTheme = {
   background: string;
   primary: string;
   secondary: string;
+  text: AppTextTheme;
 };
