@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+
 export interface Book {
   readonly url: string;
   readonly name: string;
@@ -15,6 +17,9 @@ export interface Book {
 export class BooksDTO {
   static getArray(data: any[]): Book[] {
     return data.map(book => {
+      const date = new Date(book.released);
+      const released = format(date, 'MMMM d, yyyy');
+
       const dto: Book = {
         url: book.url,
         name: book.name,
@@ -23,7 +28,7 @@ export class BooksDTO {
         publisher: book.publisher,
         country: book.country,
         mediaType: book.mediaType,
-        released: book.released,
+        released: released,
         characters: book.characters,
         numberOfPages: book.numberOfPages,
       };
