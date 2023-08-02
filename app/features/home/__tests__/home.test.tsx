@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { screen, waitFor } from '@testing-library/react-native';
+import { fireEvent, screen, waitFor } from '@testing-library/react-native';
 import Home from '..';
 import { renderWithReactQuery } from '@app/helpers/tests/renderWithReactQuery';
 import { AppProviders } from '@app/helpers/tests/appProviders';
@@ -176,6 +176,33 @@ describe('Home screen tests', () => {
     });
   });
 
+  test('should show call retry button', async () => {
+    const mockRefetch = jest.fn();
+
+    mockUseBooks.mockImplementation(() => {
+      return {
+        error: true,
+        isLoading: false,
+        data: [],
+        refetch: mockRefetch,
+        isRefetching: false,
+      };
+    });
+
+    renderWithReactQuery(
+      <AppProviders>
+        <Home />
+      </AppProviders>,
+    );
+
+    await waitFor(async () => {
+      const button = screen.getByText('Intentar de nuevo');
+      fireEvent.press(button);
+
+      expect(mockRefetch).toHaveBeenCalled();
+      mockRefetch.mockRestore();
+    });
+  });
   test('should show loading indicator', async () => {
     mockUseBooks.mockImplementation(() => {
       return {
