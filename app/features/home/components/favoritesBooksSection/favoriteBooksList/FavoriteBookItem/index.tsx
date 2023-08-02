@@ -15,7 +15,12 @@ const FavoriteBookItem: React.FC<FavoriteBookItemProps> = props => {
     <View testID="book-item">
       <BookItem {...props} />
       <View style={styles.container}>
-        <Icon name={'star'} size={24} color={Colors.yellow} />
+        <Icon
+          name={'star'}
+          size={24}
+          color={Colors.yellow}
+          testID="favoriteIcon"
+        />
       </View>
     </View>
   );
