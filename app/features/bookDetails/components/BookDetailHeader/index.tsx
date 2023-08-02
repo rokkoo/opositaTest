@@ -1,5 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, View, useWindowDimensions } from 'react-native';
+import Animated, { FadeInUp } from 'react-native-reanimated';
+
 import useBookDetail from '../../hooks/useBookDetail';
 import AppText from '@app/features/commons/core/text';
 import { AppLayoutSpacing, FontSize } from '@app/theme/metric';
@@ -19,11 +21,14 @@ const BookDetailHeader = () => {
         height={height / 3}
         style={styles.img}
       />
-      <View style={styles.bottom}>
+      <Animated.View
+        style={styles.bottom}
+        entering={FadeInUp.springify().duration(2000)}
+      >
         <AppText fontSize={FontSize.xl} color={theme.background} bold>
           {book.name}
         </AppText>
-      </View>
+      </Animated.View>
       <View style={styles.overlay} />
     </View>
   );

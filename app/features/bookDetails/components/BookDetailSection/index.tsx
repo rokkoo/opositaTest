@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
-import { Animated, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import Animated, { FadeInUp } from 'react-native-reanimated';
 
 import useBookDetail from '../../hooks/useBookDetail';
 import Section from './section';
@@ -20,7 +21,10 @@ const BookDetailSection = () => {
   }, [book.authors]);
 
   return (
-    <Animated.View style={styles.container}>
+    <Animated.View
+      style={styles.container}
+      entering={FadeInUp.delay(100).springify()}
+    >
       <Section categoryName="Autor" value={authorText} />
       <Spacer size={Spacing.xxl} />
       <Section categoryName="Editorial" value={book.publisher} />
