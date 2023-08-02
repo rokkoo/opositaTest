@@ -175,4 +175,27 @@ describe('Home screen tests', () => {
       expect(text).toBeTruthy();
     });
   });
+
+  test('should show loading indicator', async () => {
+    mockUseBooks.mockImplementation(() => {
+      return {
+        error: false,
+        isLoading: true,
+        data: [],
+        refetch: jest.fn(),
+        isRefetching: false,
+      };
+    });
+
+    renderWithReactQuery(
+      <AppProviders>
+        <Home />
+      </AppProviders>,
+    );
+
+    await waitFor(async () => {
+      const text = screen.getByTestId('loading');
+      expect(text).toBeTruthy();
+    });
+  });
 });

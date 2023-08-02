@@ -3,7 +3,7 @@ import { ActivityIndicator, View } from 'react-native';
 
 const Loading = () => {
   return (
-    <View>
+    <View testID="loading">
       <ActivityIndicator size="large" />
     </View>
   );
