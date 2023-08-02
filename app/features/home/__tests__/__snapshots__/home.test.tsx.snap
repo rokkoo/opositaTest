@@ -45,67 +45,15 @@ exports[`Home screen tests it should render correctly 1`] = `
         style={
           [
             {
-              "paddingTop": 24,
+              "paddingTop": 32,
             },
           ]
         }
       />
-      <View
-        style={
-          {
-            "paddingVertical": 16,
-          }
-        }
-        testID="bookListSection"
-      >
-        <Text
-          style={
-            [
-              {
-                "color": "black",
-                "fontFamily": "System",
-              },
-              {
-                "color": "black",
-                "fontSize": 16,
-                "fontWeight": "bold",
-              },
-              undefined,
-            ]
-          }
-        >
-          Todos los libros
-        </Text>
-        <View
-          style={
-            [
-              {
-                "paddingTop": 16,
-              },
-            ]
-          }
+      <View>
+        <ActivityIndicator
+          size="large"
         />
-        <RCTScrollView
-          getItem={[Function]}
-          getItemCount={[Function]}
-          horizontal={true}
-          keyExtractor={[Function]}
-          onContentSizeChange={[Function]}
-          onLayout={[Function]}
-          onMomentumScrollBegin={[Function]}
-          onMomentumScrollEnd={[Function]}
-          onScroll={[Function]}
-          onScrollBeginDrag={[Function]}
-          onScrollEndDrag={[Function]}
-          removeClippedSubviews={false}
-          renderItem={[Function]}
-          scrollEventThrottle={50}
-          showsHorizontalScrollIndicator={false}
-          stickyHeaderIndices={[]}
-          viewabilityConfigCallbackPairs={[]}
-        >
-          <View />
-        </RCTScrollView>
       </View>
     </View>
   </View>

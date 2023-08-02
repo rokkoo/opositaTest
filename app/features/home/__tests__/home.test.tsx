@@ -6,6 +6,10 @@ import { AppProviders } from '@app/helpers/tests/appProviders';
 import { mockBooksData } from '@app/services/__mocks__/bookService';
 
 describe('Home screen tests', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
   test('it should render correctly', async () => {
     renderWithReactQuery(
       <AppProviders>
@@ -13,7 +17,9 @@ describe('Home screen tests', () => {
       </AppProviders>,
     );
 
-    expect(screen.toJSON()).toMatchSnapshot();
+    await waitFor(() => {
+      expect(screen.toJSON()).toMatchSnapshot();
+    });
   });
 
   test('it should show screen title', async () => {
