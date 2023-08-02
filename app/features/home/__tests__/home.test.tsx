@@ -3,6 +3,7 @@ import { screen, waitFor } from '@testing-library/react-native';
 import Home from '..';
 import { renderWithReactQuery } from '@app/helpers/tests/renderWithReactQuery';
 import { AppProviders } from '@app/helpers/tests/appProviders';
+import { mockBooksData } from '@app/services/__mocks__/bookService';
 
 describe('Home screen tests', () => {
   test('it should render correctly', async () => {
@@ -65,6 +66,29 @@ describe('Home screen tests', () => {
     await waitFor(async () => {
       const text = screen.queryByTestId('recentsBooksSection');
       expect(text).toBeFalsy();
+    });
+  });
+
+  test('should render favorite section', async () => {
+    const favoriteContextMock = {
+      books: mockBooksData,
+      addBook: jest.fn(),
+      removeBook: jest.fn(),
+      hasFavorireBooks: true,
+    };
+
+    renderWithReactQuery(
+      <AppProviders favoriteContext={favoriteContextMock}>
+        <Home />
+      </AppProviders>,
+    );
+
+    await waitFor(async () => {
+      const text = screen.queryByTestId('favoritesBooksSection');
+      expect(text).toBeTruthy();
+
+      const bookItems = screen.getAllByTestId('book-item');
+      expect(bookItems).toHaveLength(mockBooksData.length);
     });
   });
 });

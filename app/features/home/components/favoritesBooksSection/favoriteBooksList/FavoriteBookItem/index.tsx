@@ -12,7 +12,7 @@ interface FavoriteBookItemProps extends BookItemProps {}
 
 const FavoriteBookItem: React.FC<FavoriteBookItemProps> = props => {
   return (
-    <View>
+    <View testID="book-item">
       <BookItem {...props} />
       <View style={styles.container}>
         <Icon name={'star'} size={24} color={Colors.yellow} />
