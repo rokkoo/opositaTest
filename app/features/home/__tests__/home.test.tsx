@@ -4,10 +4,26 @@ import Home from '..';
 import { renderWithReactQuery } from '@app/helpers/tests/renderWithReactQuery';
 import { AppProviders } from '@app/helpers/tests/appProviders';
 import { mockBooksData } from '@app/services/__mocks__/bookService';
+import useBooks from '../components/booksListSection/hooks/useBooks';
+
+const mockUseBooks = useBooks as jest.MockedFunction<typeof useBooks>;
+jest.mock('../components/booksListSection/hooks/useBooks');
 
 describe('Home screen tests', () => {
   beforeEach(() => {
     jest.useFakeTimers();
+  });
+
+  beforeEach(() => {
+    mockUseBooks.mockImplementation(() => {
+      return {
+        error: false,
+        isLoading: false,
+        data: mockBooksData,
+        refetch: jest.fn(),
+        isRefetching: false,
+      };
+    });
   });
 
   test('it should render correctly', async () => {
@@ -134,6 +150,29 @@ describe('Home screen tests', () => {
 
       const bookItems = screen.getAllByTestId('list-book-item');
       expect(bookItems).toHaveLength(mockBooksData.length);
+    });
+  });
+
+  test('should show error message', async () => {
+    mockUseBooks.mockImplementation(() => {
+      return {
+        error: true,
+        isLoading: false,
+        data: mockBooksData,
+        refetch: jest.fn(),
+        isRefetching: false,
+      };
+    });
+
+    renderWithReactQuery(
+      <AppProviders>
+        <Home />
+      </AppProviders>,
+    );
+
+    await waitFor(async () => {
+      const text = screen.getByText('Hemos tenenido un problema');
+      expect(text).toBeTruthy();
     });
   });
 });

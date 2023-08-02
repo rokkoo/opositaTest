@@ -45,15 +45,198 @@ exports[`Home screen tests it should render correctly 1`] = `
         style={
           [
             {
-              "paddingTop": 32,
+              "paddingTop": 24,
             },
           ]
         }
       />
-      <View>
-        <ActivityIndicator
-          size="large"
+      <View
+        style={
+          {
+            "paddingVertical": 16,
+          }
+        }
+        testID="bookListSection"
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "black",
+                "fontFamily": "System",
+              },
+              {
+                "color": "black",
+                "fontSize": 16,
+                "fontWeight": "bold",
+              },
+              undefined,
+            ]
+          }
+        >
+          Todos los libros
+        </Text>
+        <View
+          style={
+            [
+              {
+                "paddingTop": 16,
+              },
+            ]
+          }
         />
+        <RCTScrollView
+          data={
+            [
+              {
+                "authors": [
+                  "George R. R. Martin",
+                ],
+                "characters": [
+                  "https://www.anapioficeandfire.com/api/characters/2",
+                ],
+                "country": "United States",
+                "isbn": "978-0553103540",
+                "mediaType": "Hardcover",
+                "name": "A Game of Thrones",
+                "numberOfPages": 694,
+                "povCharacters": [
+                  "https://www.anapioficeandfire.com/api/characters/148",
+                ],
+                "publisher": "Bantam Books",
+                "released": "1996-08-01T00:00:00",
+                "url": "https://www.anapioficeandfire.com/api/books/1",
+              },
+            ]
+          }
+          getItem={[Function]}
+          getItemCount={[Function]}
+          horizontal={true}
+          keyExtractor={[Function]}
+          onContentSizeChange={[Function]}
+          onLayout={[Function]}
+          onMomentumScrollBegin={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
+          renderItem={[Function]}
+          scrollEventThrottle={50}
+          showsHorizontalScrollIndicator={false}
+          stickyHeaderIndices={[]}
+          viewabilityConfigCallbackPairs={[]}
+        >
+          <View>
+            <View
+              onFocusCapture={[Function]}
+              onLayout={[Function]}
+              style={
+                [
+                  {
+                    "flexDirection": "row",
+                  },
+                  null,
+                ]
+              }
+            >
+              <View
+                style={
+                  {
+                    "marginLeft": 0,
+                  }
+                }
+                testID="list-book-item"
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                >
+                  <Image
+                    height={200}
+                    onError={[Function]}
+                    source={
+                      {
+                        "uri": "https://covers.openlibrary.org/b/isbn/978-0553103540-M.jpg",
+                      }
+                    }
+                    style={
+                      {
+                        "borderRadius": 8,
+                        "objectFit": "cover",
+                      }
+                    }
+                    testID="img978-0553103540"
+                    width={250}
+                  />
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "rgba(0,0,0,0.5)",
+                        "borderBottomLeftRadius": 8,
+                        "borderBottomRightRadius": 8,
+                        "bottom": 0,
+                        "height": 30,
+                        "justifyContent": "center",
+                        "left": 0,
+                        "paddingHorizontal": 8,
+                        "position": "absolute",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <Text
+                      numberOfLines={1}
+                      style={
+                        [
+                          {
+                            "color": "black",
+                            "fontFamily": "System",
+                          },
+                          {
+                            "color": "#F7F7F7",
+                            "fontSize": 12,
+                            "fontWeight": "bold",
+                          },
+                          undefined,
+                        ]
+                      }
+                    >
+                      A Game of Thrones
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </RCTScrollView>
       </View>
     </View>
   </View>
