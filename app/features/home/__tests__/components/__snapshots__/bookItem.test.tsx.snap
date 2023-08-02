@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book item it should render correctly 1`] = `
+<View
+  style={
+    {
+      "marginLeft": 0,
+    }
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <Image
+      height={200}
+      onError={[Function]}
+      source={
+        {
+          "uri": "https://covers.openlibrary.org/b/isbn/978-0553103540-M.jpg",
+        }
+      }
+      style={
+        {
+          "borderRadius": 8,
+          "objectFit": "cover",
+        }
+      }
+      testID="img978-0553103540"
+      width={250}
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "rgba(0,0,0,0.5)",
+          "borderBottomLeftRadius": 8,
+          "borderBottomRightRadius": 8,
+          "bottom": 0,
+          "height": 30,
+          "justifyContent": "center",
+          "left": 0,
+          "paddingHorizontal": 8,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          [
+            {
+              "color": "black",
+              "fontFamily": "System",
+            },
+            {
+              "color": "#F7F7F7",
+              "fontSize": 12,
+              "fontWeight": "bold",
+            },
+            undefined,
+          ]
+        }
+      >
+        A Game of Thrones
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -52,6 +52,7 @@ const BookItem = (props: BookItemProps) => {
     >
       <Pressable onPress={handleItemPress}>
         <Image
+          testID={`img${props.isbn}`}
           source={{
             uri: imageUri,
           }}
