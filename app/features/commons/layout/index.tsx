@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { EdgeInsets, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useAppTheme } from '@app/theme/hooks/useTheme';
@@ -16,7 +16,11 @@ const AppLayout = ({ children }: AppLayout) => {
 
   const style = styling(theme, insets);
 
-  return <View style={style.container}>{children}</View>;
+  return (
+    <ScrollView style={style.container}>
+      <View style={style.contentContainer}>{children}</View>
+    </ScrollView>
+  );
 };
 
 const styling = (theme: AppTheme, insets: EdgeInsets) => {
@@ -24,6 +28,8 @@ const styling = (theme: AppTheme, insets: EdgeInsets) => {
     container: {
       flex: 1,
       backgroundColor: theme.background,
+    },
+    contentContainer: {
       paddingTop: insets.top + AppLayoutSpacing.paddingTop,
       paddingBottom: insets.bottom + AppLayoutSpacing.paddingBottom,
       paddingLeft: insets.left + AppLayoutSpacing.paddingLeft,
