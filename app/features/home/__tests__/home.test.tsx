@@ -114,4 +114,20 @@ describe('Home screen tests', () => {
       expect(bookItems).toHaveLength(mockBooksData.length);
     });
   });
+
+  test('should render all books', async () => {
+    renderWithReactQuery(
+      <AppProviders>
+        <Home />
+      </AppProviders>,
+    );
+
+    await waitFor(async () => {
+      const text = screen.queryByTestId('bookListSection');
+      expect(text).toBeTruthy();
+
+      const bookItems = screen.getAllByTestId('list-book-item');
+      expect(bookItems).toHaveLength(mockBooksData.length);
+    });
+  });
 });

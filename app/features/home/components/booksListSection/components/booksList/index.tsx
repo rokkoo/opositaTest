@@ -13,7 +13,9 @@ const BooksList = () => {
       showsHorizontalScrollIndicator={false}
       data={data}
       keyExtractor={({ isbn }) => isbn}
-      renderItem={({ item, index }) => <BookItem {...item} index={index} />}
+      renderItem={({ item, index }) => (
+        <BookItem {...item} index={index} testID="list-book-item" />
+      )}
     />
   );
 };

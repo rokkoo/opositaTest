@@ -8,7 +8,7 @@ import AppText from '@app/features/commons/core/text';
 
 const BooksListSection = () => {
   return (
-    <Section>
+    <Section testID="bookListSection">
       <AppText bold>Todos los libros</AppText>
       <Spacer size={Spacing.l} />
       <BooksList />
