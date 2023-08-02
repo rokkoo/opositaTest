@@ -13,6 +13,7 @@ import AppNavigationContainer from '@app/navigation';
 import { AppThemeProvider } from '@app/theme/themeContext';
 import { QueryClientWrapper } from '@app/queryClientWrapper';
 import { FavoriteBooksProvider } from '@app/stores/favoriteBooks';
+import { RecentsVisitedBooksProvider } from '@app/stores/recentsVisitedBooks';
 
 function App(): JSX.Element {
   return (
@@ -20,7 +21,9 @@ function App(): JSX.Element {
       <QueryClientWrapper>
         <AppThemeProvider>
           <FavoriteBooksProvider>
-            <AppNavigationContainer />
+            <RecentsVisitedBooksProvider>
+              <AppNavigationContainer />
+            </RecentsVisitedBooksProvider>
           </FavoriteBooksProvider>
         </AppThemeProvider>
       </QueryClientWrapper>
