@@ -21,6 +21,7 @@ import {
 
 export interface BookItemProps extends Book {
   index: number;
+  testID?: string;
 }
 
 const BookItem = (props: BookItemProps) => {
@@ -45,7 +46,10 @@ const BookItem = (props: BookItemProps) => {
   }, [props, handleBookPress]);
 
   return (
-    <View style={{ marginLeft: props.index !== 0 ? Spacing.xl : 0 }}>
+    <View
+      style={{ marginLeft: props.index !== 0 ? Spacing.xl : 0 }}
+      testID={props.testID}
+    >
       <Pressable onPress={handleItemPress}>
         <Image
           source={{

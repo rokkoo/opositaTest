@@ -5,7 +5,10 @@ import {
   FavoriteBooksContext,
   FavoriteBooksContextProps,
 } from '@app/stores/favoriteBooks';
-import { RecentsVisitedBooksContext } from '@app/stores/recentsVisitedBooks';
+import {
+  RecentsVisitedBooksContext,
+  RecentsVisitedBooksContextProps,
+} from '@app/stores/recentsVisitedBooks';
 
 const contextMock = {
   theme: LightTheme,
@@ -30,16 +33,18 @@ const recentVisitedContextMock = {
 interface AppProvidersProps {
   children: React.ReactNode;
   favoriteContext?: FavoriteBooksContextProps;
+  recentVisitedContext?: RecentsVisitedBooksContextProps;
 }
 
 export const AppProviders = ({
   children,
   favoriteContext = favoriteContextMock,
+  recentVisitedContext = recentVisitedContextMock,
 }: AppProvidersProps) => {
   return (
     <AppThemeContext.Provider value={contextMock}>
       <FavoriteBooksContext.Provider value={favoriteContext}>
-        <RecentsVisitedBooksContext.Provider value={recentVisitedContextMock}>
+        <RecentsVisitedBooksContext.Provider value={recentVisitedContext}>
           {children}
         </RecentsVisitedBooksContext.Provider>
       </FavoriteBooksContext.Provider>

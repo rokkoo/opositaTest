@@ -13,7 +13,9 @@ const RecentsVisitedBooksList = () => {
       showsHorizontalScrollIndicator={false}
       data={books}
       keyExtractor={({ isbn }) => isbn}
-      renderItem={({ item, index }) => <BookItem {...item} index={index} />}
+      renderItem={({ item, index }) => (
+        <BookItem {...item} index={index} testID={'recent-book-item'} />
+      )}
     />
   );
 };

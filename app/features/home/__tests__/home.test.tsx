@@ -91,4 +91,27 @@ describe('Home screen tests', () => {
       expect(bookItems).toHaveLength(mockBooksData.length);
     });
   });
+
+  test('should render recent visited section', async () => {
+    const recentVisitedContext = {
+      books: mockBooksData,
+      addBook: jest.fn(),
+      removeBook: jest.fn(),
+      hasRecentsVisitedBooks: true,
+    };
+
+    renderWithReactQuery(
+      <AppProviders recentVisitedContext={recentVisitedContext}>
+        <Home />
+      </AppProviders>,
+    );
+
+    await waitFor(async () => {
+      const text = screen.queryByTestId('recentsBooksSection');
+      expect(text).toBeTruthy();
+
+      const bookItems = screen.getAllByTestId('recent-book-item');
+      expect(bookItems).toHaveLength(mockBooksData.length);
+    });
+  });
 });
