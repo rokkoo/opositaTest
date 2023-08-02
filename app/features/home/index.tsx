@@ -7,8 +7,33 @@ import RecentsBooksSection from '@app/features/home/components/recentsBooksSecti
 import { Spacing } from '@app/theme/metric';
 import Spacer from '../commons/spacer';
 import HomeHeader from './components/homeHeader';
+import useBooks from './components/booksListSection/hooks/useBooks';
+import Loading from '../commons/loading';
+import ErrorLoading from '../commons/errorLoading';
 
 const Home = () => {
+  const { error, isLoading, refetch } = useBooks();
+
+  if (isLoading) {
+    return (
+      <AppLayout>
+        <HomeHeader />
+        <Spacer size={Spacing.xxl} />
+        <Loading />
+      </AppLayout>
+    );
+  }
+
+  if (error) {
+    return (
+      <AppLayout>
+        <HomeHeader />
+        <Spacer size={Spacing.xxl} />
+        <ErrorLoading OnretryPress={refetch} />
+      </AppLayout>
+    );
+  }
+
   return (
     <AppLayout>
       <HomeHeader />
