@@ -1,6 +1,11 @@
 import { RouteProp, useRoute } from '@react-navigation/native';
-import { RootStackParamList, STACK_SCREENS } from '@app/navigation/types';
 import { useMemo } from 'react';
+import { RootStackParamList, STACK_SCREENS } from '@app/navigation/types';
+import {
+  BOOK_COVER_URL,
+  BookCoverSize,
+  BookCoverType,
+} from '@app/services/bookCoverService';
 
 const useBookDetail = () => {
   const { params } =
@@ -9,7 +14,7 @@ const useBookDetail = () => {
   const { book } = params;
 
   const coverURL = useMemo(() => {
-    return `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`;
+    return `${BOOK_COVER_URL}/${book.isbn}-${BookCoverSize.L}${BookCoverType.JPG}`;
   }, [book.isbn]);
 
   return { book, coverURL };

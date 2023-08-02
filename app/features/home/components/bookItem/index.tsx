@@ -13,6 +13,11 @@ import { FontSize, Spacing } from '@app/theme/metric';
 import AppText from '@app/features/commons/core/text';
 import { useAppTheme } from '@app/theme/hooks/useTheme';
 import useBookAction from '@app/features/home/components/bookItem/hooks/useBookAction';
+import {
+  BOOK_COVER_URL,
+  BookCoverSize,
+  BookCoverType,
+} from '@app/services/bookCoverService';
 
 export interface BookItemProps extends Book {
   index: number;
@@ -32,7 +37,7 @@ const BookItem = (props: BookItemProps) => {
   }, [width]);
 
   const imageUri = useMemo(() => {
-    return `https://covers.openlibrary.org/b/isbn/${props.isbn}-M.jpg`;
+    return `${BOOK_COVER_URL}/${props.isbn}-${BookCoverSize.M}${BookCoverType.JPG}`;
   }, [props.isbn]);
 
   const handleItemPress = useCallback(() => {
