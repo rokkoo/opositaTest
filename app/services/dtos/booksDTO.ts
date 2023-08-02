@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 
 export interface Book {
   readonly url: string;
@@ -18,7 +19,9 @@ export class BooksDTO {
   static getArray(data: any[]): Book[] {
     return data.map(book => {
       const date = new Date(book.released);
-      const released = format(date, 'MMMM d, yyyy');
+      const released = format(date, 'd MMMM, yyyy', {
+        locale: es,
+      });
 
       const dto: Book = {
         url: book.url,
