@@ -20,11 +20,19 @@ export function RecentsVisitedBooksProvider({
 
   const addBook = useCallback((book: Book) => {
     setBooks(prevMode => {
-      // By spreading the prevMode array inside the new Set and adding the new book at the beginning,
-      // the new book will be the first one in the array, giving it higher priority in the display.
-      const uniqueBooks = new Set<Book>([book, ...prevMode]);
+      // Check if the book already exists in the array.
+      const bookExists = prevMode.some(prevBook => prevBook.isbn === book.isbn);
 
-      return Array.from(uniqueBooks);
+      if (bookExists) {
+        // If the book exists, filter out the duplicate book and add the new book at the beginning.
+        const filteredBooks = prevMode.filter(
+          prevBook => prevBook.isbn !== book.isbn,
+        );
+        return [book, ...filteredBooks];
+      }
+
+      // If the book doesn't exist, create a new array with the new book at the beginning.
+      return [book, ...prevMode];
     });
   }, []);
 
