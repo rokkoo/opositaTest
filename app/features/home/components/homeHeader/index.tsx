@@ -6,7 +6,11 @@ import { FontSize } from '@app/theme/metric';
 
 const HomeHeader = () => {
   return (
-    <AppText fontSize={FontSize.xxl} style={{ textAlign: 'center' }}>
+    <AppText
+      fontSize={FontSize.xxl}
+      style={{ textAlign: 'center' }}
+      testID="HomeScreenTitle"
+    >
       OpositaTest
     </AppText>
   );

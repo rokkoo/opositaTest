@@ -15,7 +15,7 @@ const RecentsBooksSection = () => {
   }
 
   return (
-    <Section>
+    <Section testID="recentsBooksSection">
       <AppText bold>Tus libros favoritos</AppText>
       <Spacer size={Spacing.l} />
       <RecentsVisitedBooksList />
