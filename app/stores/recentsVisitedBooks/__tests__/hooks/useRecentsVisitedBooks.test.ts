@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { RecentsVisitedBooksProvider } from '../..';
 import { useRecentsVisitedBooks } from '../../hooks/useRecentsVisitedBooks';
-import { BooksDTO } from '@app/services/dtos/booksDTO';
 import { mockBooksData } from '@app/services/__mocks__/bookService';
 
 describe('useRecentsVisitedBooks', () => {
@@ -12,7 +11,7 @@ describe('useRecentsVisitedBooks', () => {
 
     // the inital value
     expect(result.current.books).toHaveLength(0);
-    const book = BooksDTO.getArray(mockBooksData)[0];
+    const book = mockBooksData[0];
 
     act(() => {
       result.current.addBook(book);
@@ -31,7 +30,7 @@ describe('useRecentsVisitedBooks', () => {
     expect(result.current.hasRecentsVisitedBooks).toBe(false);
 
     act(() => {
-      const book = BooksDTO.getArray(mockBooksData)[0];
+      const book = mockBooksData[0];
       result.current.addBook(book);
     });
 

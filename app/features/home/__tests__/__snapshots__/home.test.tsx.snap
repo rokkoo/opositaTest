@@ -100,11 +100,8 @@ exports[`Home screen tests it should render correctly 1`] = `
                 "mediaType": "Hardcover",
                 "name": "A Game of Thrones",
                 "numberOfPages": 694,
-                "povCharacters": [
-                  "https://www.anapioficeandfire.com/api/characters/148",
-                ],
                 "publisher": "Bantam Books",
-                "released": "1996-08-01T00:00:00",
+                "released": "1 agosto, 1996",
                 "url": "https://www.anapioficeandfire.com/api/books/1",
               },
             ]

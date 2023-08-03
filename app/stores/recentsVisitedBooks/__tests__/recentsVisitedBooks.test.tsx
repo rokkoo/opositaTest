@@ -6,13 +6,12 @@ import {
 } from '..';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { mockBooksData } from '@app/services/__mocks__/bookService';
-import { BooksDTO } from '@app/services/dtos/booksDTO';
 
 const TestComponent = () => {
   const context = useContext(RecentsVisitedBooksContext);
 
   const handleAddBook = () => {
-    const book = BooksDTO.getArray(mockBooksData)[0];
+    const book = mockBooksData[0];
     context?.addBook(book);
   };
 
@@ -76,7 +75,7 @@ describe('RecentVisitedBooksContext', () => {
 
     expect(mockAddBookFn).toBeCalled();
 
-    const book = BooksDTO.getArray(mockBooksData)[0];
+    const book = mockBooksData[0];
     expect(mockAddBookFn).toBeCalledWith(book);
   });
 });

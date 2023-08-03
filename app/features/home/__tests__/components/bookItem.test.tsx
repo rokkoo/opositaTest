@@ -3,11 +3,10 @@ import { screen, waitFor } from '@testing-library/react-native';
 
 import BookItem from '../../components/bookItem';
 import { mockBooksData } from '@app/services/__mocks__/bookService';
-import { BooksDTO } from '@app/services/dtos/booksDTO';
 import { renderWithReactQuery } from '@app/helpers/tests/renderWithReactQuery';
 import { AppTheProvider } from '@app/helpers/tests/appTheProvider';
 
-const mockBook = BooksDTO.getArray(mockBooksData)[0];
+const mockBook = mockBooksData[0];
 
 describe('Book item', () => {
   test('it should render correctly', async () => {

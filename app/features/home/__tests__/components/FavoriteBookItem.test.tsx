@@ -2,12 +2,11 @@ import React from 'react';
 import { screen, waitFor } from '@testing-library/react-native';
 
 import { mockBooksData } from '@app/services/__mocks__/bookService';
-import { BooksDTO } from '@app/services/dtos/booksDTO';
 import { renderWithReactQuery } from '@app/helpers/tests/renderWithReactQuery';
 import { AppTheProvider } from '@app/helpers/tests/appTheProvider';
 import FavoriteBookItem from '../../components/favoritesBooksSection/favoriteBooksList/FavoriteBookItem';
 
-const mockBook = BooksDTO.getArray(mockBooksData)[0];
+const mockBook = mockBooksData[0];
 
 describe('Favorite Book item', () => {
   test('it should render correctly', async () => {
