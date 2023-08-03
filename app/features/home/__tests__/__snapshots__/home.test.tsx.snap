@@ -20,27 +20,52 @@ exports[`Home screen tests it should render correctly 1`] = `
         }
       }
     >
-      <Text
-        style={
-          [
-            {
-              "color": "black",
-              "fontFamily": "System",
-            },
-            {
-              "color": "black",
-              "fontSize": 32,
-              "fontWeight": "normal",
-            },
-            {
-              "textAlign": "center",
-            },
-          ]
-        }
-        testID="HomeScreenTitle"
+      <RNGestureHandlerButton
+        collapsable={false}
+        delayLongPress={600}
+        enabled={true}
+        exclusive={true}
+        handlerTag={1}
+        handlerType="NativeViewGestureHandler"
+        onGestureEvent={[Function]}
+        onGestureHandlerEvent={[Function]}
+        onGestureHandlerStateChange={[Function]}
+        onHandlerStateChange={[Function]}
+        rippleColor={0}
+        touchSoundDisabled={false}
       >
-        OpositaTest
-      </Text>
+        <View
+          accessible={true}
+          collapsable={false}
+          style={
+            {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "black",
+                  "fontFamily": "System",
+                },
+                {
+                  "color": "black",
+                  "fontSize": 32,
+                  "fontWeight": "normal",
+                },
+                {
+                  "textAlign": "center",
+                },
+              ]
+            }
+            testID="HomeScreenTitle"
+          >
+            OpositaTest
+          </Text>
+        </View>
+      </RNGestureHandlerButton>
       <View
         style={
           [
