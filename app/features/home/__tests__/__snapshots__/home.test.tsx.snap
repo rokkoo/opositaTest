@@ -74,7 +74,7 @@ exports[`Home screen tests it should render correctly 1`] = `
             ]
           }
         >
-          Todos los libros
+          Libros
         </Text>
         <View
           style={
