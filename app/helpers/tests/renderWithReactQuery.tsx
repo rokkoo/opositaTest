@@ -10,6 +10,11 @@ const queryClient = new QueryClient({
   },
 });
 
+beforeEach(() => {
+  // needed for react query
+  jest.useFakeTimers();
+});
+
 export const renderWithReactQuery = (element: React.ReactElement) =>
   render(
     <QueryClientProvider client={queryClient}>{element}</QueryClientProvider>,

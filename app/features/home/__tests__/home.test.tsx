@@ -11,10 +11,6 @@ jest.mock('../components/booksListSection/hooks/useBooks');
 
 describe('Home screen tests', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
-  });
-
-  beforeEach(() => {
     mockUseBooks.mockImplementation(() => {
       return {
         error: false,
@@ -222,6 +218,19 @@ describe('Home screen tests', () => {
 
     await waitFor(async () => {
       const text = screen.getByTestId('loading');
+      expect(text).toBeTruthy();
+    });
+  });
+
+  test('it should render filter book section', async () => {
+    renderWithReactQuery(
+      <AppProviders>
+        <Home />
+      </AppProviders>,
+    );
+
+    await waitFor(async () => {
+      const text = screen.queryByTestId('filter-section');
       expect(text).toBeTruthy();
     });
   });
