@@ -10,6 +10,7 @@ import HomeHeader from './components/homeHeader';
 import useBooks from './components/booksListSection/hooks/useBooks';
 import Loading from '../commons/loading';
 import ErrorLoading from '../commons/errorLoading';
+import FilterSection from '@app/features/home/components/filterSection';
 
 const Home = () => {
   const { error, isLoading, refetch } = useBooks();
@@ -37,6 +38,8 @@ const Home = () => {
   return (
     <AppLayout>
       <HomeHeader />
+      <Spacer size={Spacing.xl} />
+      <FilterSection />
       <Spacer size={Spacing.xl} />
       <FavoritesBooksSection />
       <BooksListSection />
