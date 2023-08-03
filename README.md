@@ -10,10 +10,10 @@
 
 ## Demo
 
-<img src="https://raw.githubusercontent.com/rokkoo/opositaTest/main/demo/ios.png" alt="iOS demo" width="100" height="250" />
+<img src="https://raw.githubusercontent.com/rokkoo/opositaTest/main/demo/ios.png" alt="iOS demo" width="400" height="225" />
 [iOS video demo](https://www.veed.io/view/081d4e65-89c1-4649-9db8-2bfb1f805fa5)
 
-<img src="https://raw.githubusercontent.com/rokkoo/opositaTest/main/demo/android.png" alt="Android demo" width="100" height="250" />
+<img src="https://raw.githubusercontent.com/rokkoo/opositaTest/main/demo/android.png" alt="Android demo" width="400" height="225" />
 [Android video demo](https://veed.io/view/111fba2d-9989-4fe5-9912-c17b096e822c)
 
 ## Step 1: Start the Metro Server
