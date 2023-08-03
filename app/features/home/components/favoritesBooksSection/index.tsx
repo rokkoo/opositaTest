@@ -16,7 +16,7 @@ const FavoritesBooksSection = () => {
 
   return (
     <Section testID="favoritesBooksSection">
-      <AppText bold>Tus libros favoritos</AppText>
+      <AppText bold>Favoritos</AppText>
       <Spacer size={Spacing.l} />
       <FavoriteBooksList />
     </Section>
