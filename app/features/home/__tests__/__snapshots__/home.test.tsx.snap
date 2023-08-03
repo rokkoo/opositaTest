@@ -97,6 +97,7 @@ exports[`Home screen tests it should render correctly 1`] = `
               "paddingVertical": 8,
             }
           }
+          testID="input"
           value=""
         />
       </View>
