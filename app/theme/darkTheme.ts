@@ -1,13 +1,14 @@
 import { AppTheme } from './types';
 
 const DarkTheme: Readonly<AppTheme> = {
-  background: '#151515',
-  primary: '#F7F7F7',
-  secondary: '#CBCBCB',
+  background: '#1A1A1A',
+  primary: '#1A1A1A',
+  secondary: '#FF7C00',
   tertiary: '#9D9D9D',
   text: {
-    primary: 'white',
-    secondary: 'gray',
+    primary: '#FFFFFF', // White
+    secondary: '#FF7C00',
+    tertiary: '#DBDBDB',
   },
 };
 

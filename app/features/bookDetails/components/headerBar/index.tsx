@@ -2,12 +2,10 @@ import React, { useMemo } from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 import Header from '@app/features/commons/header';
-import { useAppTheme } from '@app/theme/hooks/useTheme';
 import useHeaderBar from './hooks/useHeaderBar';
 import { Colors } from '@app/theme/colors';
 
 const HeaderBar = () => {
-  const { theme } = useAppTheme();
   const { handlePress, isFavoriteBook } = useHeaderBar();
 
   const color = useMemo(() => {
@@ -15,8 +13,8 @@ const HeaderBar = () => {
       return Colors.yellow;
     }
 
-    return theme.background;
-  }, [isFavoriteBook, theme.background]);
+    return Colors.light;
+  }, [isFavoriteBook]);
 
   const iconName = useMemo(() => {
     if (isFavoriteBook) {

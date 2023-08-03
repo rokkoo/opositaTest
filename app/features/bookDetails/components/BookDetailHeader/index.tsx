@@ -5,12 +5,11 @@ import Animated, { FadeInUp } from 'react-native-reanimated';
 import useBookDetail from '../../hooks/useBookDetail';
 import AppText from '@app/features/commons/core/text';
 import { AppLayoutSpacing, FontSize } from '@app/theme/metric';
-import { useAppTheme } from '@app/theme/hooks/useTheme';
+import { Colors } from '@app/theme/colors';
 
 const BookDetailHeader = () => {
   const { coverURL, book } = useBookDetail();
   const { height } = useWindowDimensions();
-  const { theme } = useAppTheme();
 
   return (
     <View>
@@ -25,7 +24,7 @@ const BookDetailHeader = () => {
         style={styles.bottom}
         entering={FadeInUp.springify().duration(2000)}
       >
-        <AppText fontSize={FontSize.xl} color={theme.background} bold>
+        <AppText fontSize={FontSize.xl} color={Colors.light} bold>
           {book.name}
         </AppText>
       </Animated.View>

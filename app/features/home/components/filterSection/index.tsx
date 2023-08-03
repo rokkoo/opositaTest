@@ -20,6 +20,7 @@ const FilterSection = () => {
       <TextInput
         testID="input"
         placeholder="A Game of Thrones"
+        placeholderTextColor={theme.text.tertiary}
         onChangeText={handleTextChange}
         value={filterText ?? ''}
         style={styles.input}

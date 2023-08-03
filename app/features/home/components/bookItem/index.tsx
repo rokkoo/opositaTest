@@ -11,13 +11,13 @@ import {
 import { Book } from '@app/services/dtos/booksDTO';
 import { FontSize, Spacing } from '@app/theme/metric';
 import AppText from '@app/features/commons/core/text';
-import { useAppTheme } from '@app/theme/hooks/useTheme';
 import useBookAction from '@app/features/home/components/bookItem/hooks/useBookAction';
 import {
   BOOK_COVER_URL,
   BookCoverSize,
   BookCoverType,
 } from '@app/services/bookCoverService';
+import { Colors } from '@app/theme/colors';
 
 export interface BookItemProps extends Book {
   index: number;
@@ -25,7 +25,6 @@ export interface BookItemProps extends Book {
 }
 
 const BookItem = (props: BookItemProps) => {
-  const { theme } = useAppTheme();
   const { width } = useWindowDimensions();
   const { handleBookPress } = useBookAction();
 
@@ -68,7 +67,7 @@ const BookItem = (props: BookItemProps) => {
             numberOfLines={1}
             bold
             fontSize={FontSize.s}
-            color={theme.background}
+            color={Colors.light}
           >
             {props.name}
           </AppText>

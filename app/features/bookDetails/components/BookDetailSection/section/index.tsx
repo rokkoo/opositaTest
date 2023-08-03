@@ -19,7 +19,7 @@ const Section: React.FC<SectionPros> = ({ categoryName, value }) => {
         {categoryName}
       </AppText>
       <Spacer size={Spacing.l} />
-      <AppText bold style={styles.textValue}>
+      <AppText bold style={styles.textValue} color={theme.text.primary}>
         {value}
       </AppText>
     </View>

@@ -9,6 +9,7 @@ export type THEME_SCHEMA_VALUES =
 export type AppTextTheme = {
   primary: string;
   secondary: string;
+  tertiary: string;
 };
 
 export type AppTheme = {

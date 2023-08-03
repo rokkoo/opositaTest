@@ -88,6 +88,7 @@ exports[`Home screen tests it should render correctly 1`] = `
         <TextInput
           onChangeText={[Function]}
           placeholder="A Game of Thrones"
+          placeholderTextColor="#0D0D0D"
           style={
             {
               "borderColor": "#9D9D9D",

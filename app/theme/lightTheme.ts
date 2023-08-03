@@ -8,6 +8,7 @@ const LightTheme: Readonly<AppTheme> = {
   text: {
     primary: 'black',
     secondary: '#FF7C00',
+    tertiary: '#0D0D0D',
   },
 };
 

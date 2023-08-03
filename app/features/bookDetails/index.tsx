@@ -10,10 +10,13 @@ import { AppLayoutSpacing, Spacing } from '@app/theme/metric';
 import HeaderBar from './components/headerBar';
 import { useRecentsVisitedBooks } from '@app/stores/recentsVisitedBooks/hooks/useRecentsVisitedBooks';
 import useBookDetail from './hooks/useBookDetail';
+import { useAppTheme } from '@app/theme/hooks/useTheme';
+import { AppTheme } from '@app/theme/types';
 
 const BookDetails = () => {
   const insets = useSafeAreaInsets();
-  const styles = styling(insets);
+  const { theme } = useAppTheme();
+  const styles = styling(theme, insets);
   const { book } = useBookDetail();
   const { addBook } = useRecentsVisitedBooks();
 
@@ -34,10 +37,11 @@ const BookDetails = () => {
   );
 };
 
-const styling = (insets: EdgeInsets) => {
+const styling = (theme: AppTheme, insets: EdgeInsets) => {
   return StyleSheet.create({
     container: {
       flex: 1,
+      backgroundColor: theme.background,
     },
     sectionContainer: {
       paddingBottom: AppLayoutSpacing.paddingBottom + insets.bottom,
