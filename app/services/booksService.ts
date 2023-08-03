@@ -12,6 +12,22 @@ const getBooks = async (): Promise<Book[]> => {
   }
 };
 
+const findBookByName = async (bookName: string) => {
+  try {
+    const response = await ApiClient.get<any[]>('/books', {
+      params: {
+        name: bookName,
+      },
+    });
+
+    return BooksDTO.getArray(response);
+  } catch (error) {
+    console.error('Error fetching books:', error);
+    throw error;
+  }
+};
+
 export const BooksService = {
   getBooks,
+  findBookByName,
 };
