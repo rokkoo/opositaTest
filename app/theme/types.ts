@@ -15,5 +15,6 @@ export type AppTheme = {
   background: string;
   primary: string;
   secondary: string;
+  tertiary: string;
   text: AppTextTheme;
 };
