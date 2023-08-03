@@ -18,6 +18,7 @@ const FilterSection = () => {
       <AppText bold>Filtra por un nombre</AppText>
       <Spacer size={Spacing.l} />
       <TextInput
+        testID="input"
         placeholder="A Game of Thrones"
         onChangeText={handleTextChange}
         value={filterText ?? ''}

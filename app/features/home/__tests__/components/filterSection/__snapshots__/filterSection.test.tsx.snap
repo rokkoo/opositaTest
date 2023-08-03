@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterSection it should render correctly 1`] = `
+<View
+  style={
+    {
+      "paddingVertical": 16,
+    }
+  }
+  testID="filter-section"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "black",
+          "fontFamily": "System",
+        },
+        {
+          "color": "black",
+          "fontSize": 16,
+          "fontWeight": "bold",
+        },
+        undefined,
+      ]
+    }
+  >
+    Filtra por un nombre
+  </Text>
+  <View
+    style={
+      [
+        {
+          "paddingTop": 16,
+        },
+      ]
+    }
+  />
+  <TextInput
+    onChangeText={[Function]}
+    placeholder="A Game of Thrones"
+    style={
+      {
+        "borderColor": "#9D9D9D",
+        "borderRadius": 4,
+        "borderWidth": 3,
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+      }
+    }
+    testID="input"
+    value=""
+  />
+</View>
+`;
