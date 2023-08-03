@@ -6,6 +6,7 @@
 - Axios
 - React-query
 - Reanimated 2
+- React-testing-library
 
 ## Step 1: Start the Metro Server
 
@@ -14,10 +15,6 @@ First, you will need to start **Metro**, the JavaScript _bundler_ that ships _wi
 To start Metro, run the following command from the _root_ of your React Native project:
 
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
 yarn start
 ```
 
@@ -33,13 +30,13 @@ yarn android
 
 ### For iOS
 
-Before everithing run
+Before everything run
 
 ```bash
 yarn ios:setup
 ```
 
-this step is need just for the first time
+this step is needed just for the first time
 
 ```bash
 yarn ios
