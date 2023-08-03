@@ -8,6 +8,14 @@
 - Reanimated 2
 - React-testing-library
 
+## Demo
+
+![Demo iOS](https://github.com/rokkoo/opositaTest/blob/main/demo/ios.png?raw=true)
+[iOS video demo](https://www.veed.io/view/081d4e65-89c1-4649-9db8-2bfb1f805fa5)
+
+![Demo Android](https://github.com/rokkoo/opositaTest/blob/main/demo/android.png?raw=true)
+[Android video demo](https://veed.io/view/111fba2d-9989-4fe5-9912-c17b096e822c)
+
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
